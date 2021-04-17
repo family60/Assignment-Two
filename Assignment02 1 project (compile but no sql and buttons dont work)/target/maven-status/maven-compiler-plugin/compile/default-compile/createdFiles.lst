@@ -1,0 +1,11 @@
+com\kovunov\model\Item.class
+com\kovunov\GameManager.class
+com\kovunov\interceptor\LoggedInterceptor.class
+com\kovunov\DeleteGame.class
+com\kovunov\AddGame.class
+com\kovunov\model\Store.class
+com\kovunov\decorator\GameManagementServiceDecorator.class
+com\kovunov\interceptor\Logged.class
+com\kovunov\GameManagementService.class
+com\kovunov\GameBean.class
+com\kovunov\model\Inventory.class

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+    <div class="p-d-flex">
+        <div class="p-mr-2">
+
+            <p:dataTable id="table" var="Inventory" value="#{InventoryBean.Inventory}">
+                <p:column headerText="Inventory Name">
+                    <h:outputText value="#{Inventory.name}"/>
+                </p:column>
+
+                <p:column headerText="Sport">
+                    <h:outputText value="#{Inventory.sport}"/>
+                </p:column>
+
+                <p:column headerText="Quantity">
+                    <h:outputText value="#{Inventory.quantity}"/>
+                </p:column>
+
+                <p:column headerText="PricePerUnit">
+                    <h:outputText value="#{Inventory.pricePerUnit}"/>
+                </p:column>
+
+                <p:column headerText="Date">
+                    <h:outputText value="#{Inventory.date}"/>
+                </p:column>
+
+            </p:dataTable>
+        </div>
+
+        <div class="p-mr-2" style="margin-top: 2em">
+            <h:form>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="name" style="margin-right: 1em"> Name: </p:outputLabel>
+                    <p:inputText id="name" type="text" value="#{InventoryBean.name}"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="sport" style="margin-right: 1em"> sport: </p:outputLabel>
+                    <p:inputText id="sport" type="text" value="#{InventoryBean.sport}"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="quantity" style="margin-right: 1em"> Quantity: </p:outputLabel>
+                    <p:inputText id="quantity" type="text" value="#{InventoryBean.quantity}"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="pricePerUnit" style="margin-right: 1em"> Price Per Unit: </p:outputLabel>
+                    <p:inputText id="pricePerUnit" type="text" value="#{InventoryBean.pricePerUnit}"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="date" style="margin-right: 1em"> Date: </p:outputLabel>
+                    <p:inputText id="date" type="text" value="#{InventoryBean.date}"/>
+                </div>
+
+                <p:commandButton style="margin: 2em" type="submit" actionListener="#{InventoryBean.addInventory}"
+                                 value="Add Inventory"
+                                 icon="pi pi-check" iconPos="right"/>
+
+                <p:commandButton style="margin: 2em" type="submit" actionListener="#{InventoryBean.deleteInventory}"
+                                 value="Remove Inventory"
+                                 icon="pi pi-check" iconPos="right"/>
+            </h:form>
+        </div>
+    </div>
+
+</h:body>
+</html>
+

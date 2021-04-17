@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Title</title>
+</h:head>
+<h:body>
+  <div class="card" style="display: flex; justify-content: center">
+    <h:form>
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="inventoryname" style="margin-right: 1em">Item Name: </p:outputLabel>
+        <p:inputText id="inventoryname" type="text" value="#{inventoryAppBean.inventoryName}"/>
+        <p:message for="@previous"/>
+      </div>
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="sportname" style="margin-right: 1em">Sport Name: </p:outputLabel>
+        <p:inputText id="sportname" type="text" value="#{inventoryAppBean.sportName}"/>
+        <p:message for="@previous"/>
+      </div>
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="password" style="margin-right: 1em">Passcode: </p:outputLabel>
+        <p:password id="password" value="#{inventoryAppBean.passcode}" toggleMask="true" redisplay="true"/>
+        <p:message for="@previous"/>
+      </div>
+      <div class="p-field" style="margin: 2em">
+        <p:selectBooleanCheckbox value="#{inventoryAppBean.admin}" itemLabel="Admin login"/>
+      </div>
+      <div class="p-field" style="margin: 2em">
+        <p:commandButton style="margin: 2em" type="submit" action="#{inventoryAppBean.addInventory}"
+                         value="Sign Up" ajax="false" validateClient="true"
+                         icon="pi pi-check" iconPos="right"/>
+      </div>
+    </h:form>
+  </div>
+</h:body>
+</html>
